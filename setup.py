@@ -4,7 +4,7 @@ with open("README.md", "r",encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='cwslib1',
+    name='cwslib',
     version='1.0.0',
     author='jiangli',
     author_email='1329084163@qq.com',
