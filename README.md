@@ -1,4 +1,5 @@
-# cwslab
+#cwslib
+
 **Introduction**
 
 This module contains the following algorithms: the standard MinHash algorithm for binary sets andseveral Consistent 
@@ -9,9 +10,9 @@ time of encoding.
 
 **Installation**
 
-    pip install cwslab
+    pip install cwslib
     
-The homepage of the toolbox is [here](https://github.com/jiangli0618/cwslab).
+The homepage of the toolbox is [here](https://github.com/jiangli0618/cwslib).
 
 **Usage**
 
@@ -20,8 +21,9 @@ The homepage of the toolbox is [here](https://github.com/jiangli0618/cwslab).
     # Import necessary libraries/modules
 
     from os.path import basename
+    import cwslib
     import scipy.io as scio
-    from cwslab import ConsistentWeightedSampling
+    from cwslib.CWSlib import ConsistentWeightedSampling
     from scipy.io import savemat
     import os
     from scipy.sparse import csr_matrix
@@ -40,7 +42,7 @@ The homepage of the toolbox is [here](https://github.com/jiangli0618/cwslab).
         # Iterate over a range of dimension numbers
         for dimension_num in range(10, 100, 10):
             # Apply the Weighted MinHash algorithm to generate fingerprints
-            cws = CWSlab.ConsistentWeightedSampling(data, dimension_num)
+            cws = cwslib.CWSlib.ConsistentWeightedSampling(data, dimension_num)
             fingerprints_k, fingerprints_y, elapsed = cws.algorithms-name()
             # Print information about the current process
             print(str(basename(mat_file)), 'dimension_num =', dimension_num, 'algorithms-name-elapsed = ', elapsed, '秒')
@@ -54,6 +56,5 @@ The homepage of the toolbox is [here](https://github.com/jiangli0618/cwslab).
             file_path = os.path.join(save_path, file_name)
             # Save the fingerprints into a new MATLAB file
             savemat(file_path, {'fingerprints_k': fingerprints_k, 'fingerprints_y': fingerprints_y})
-}
 
 
