@@ -1,4 +1,5 @@
 #cwslib
+
 **Introduction**
 
 This module contains the following algorithms: the standard MinHash algorithm for binary sets andseveral Consistent 
